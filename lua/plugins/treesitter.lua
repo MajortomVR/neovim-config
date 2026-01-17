@@ -4,8 +4,8 @@ return {
         {
             'nvim-treesitter/nvim-treesitter-context',
             opts = {
-                max_lines = 4,
-                multiline_threshold = 2,
+                max_lines = 0, -- 4
+                multiline_threshold = 20, -- 2
             },
         },
     },
@@ -37,39 +37,59 @@ return {
             once = true,
             callback = function()
                 ts.install({
+                    'awk',
                     'bash',
-                    'comment',
+                    'c',
+                    'c_sharp',
+                    'cmake',
+                    'comment',  -- Used for TODO and FIXME highlighting
                     'css',
+                    'cpp',
+                    'desktop', -- For .desktop and .directory files    tree-sitter-desktop
                     'diff',
-                    'fish',
+                    'dockerfile',
                     'git_config',
                     'git_rebase',
+                    'gitattributes',
                     'gitcommit',
                     'gitignore',
+                    'glsl',
+                    'graphql',
+                    'hcl',      -- HCL language for hashicorp configuration language (used for Terraform (.tf .tfvars) and OpenTofu
                     'html',
+                    'http',
                     'javascript',
+                    'jq',    -- for the terminal command jq to develop complex queries etc
                     'jsdoc',
                     'json',
-                    'latex',
                     'lua',
                     'luadoc',
                     'make',
                     'markdown',
                     'markdown_inline',
-                    'norg',
+                    'nginx',
+                    'norg', -- Note taking similar to markdown but for local use.
+                    'passwd', -- Parser for the /etc/passwd password database
+                    'pem', -- Parser for PEM files
+                    'pug',
                     'python',
                     'query',
+                    'readline',
                     'regex',
+                    'rust',
                     'scss',
-                    'svelte',
+                    'sql',
+                    'ssh_config',
+                    'terraform',
+                    'tmux',
                     'toml',
-                    'tsx',
                     'typescript',
-                    'typst',
+                    'udev',
                     'vim',
                     'vimdoc',
                     'vue',
                     'xml',
+                    'yaml',
                 }, {
                         max_jobs = 8,
                     })
