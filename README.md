@@ -1,6 +1,6 @@
 # Dependencies
 
-Needs a nerdfont installed.
+## Nerdfont
 
 Download a nerd font from https://www.nerdfonts.com for example.
 (RobotoMono Nerd Font), download the zip package.
@@ -13,6 +13,11 @@ fc-cache -fv
 ```
 
 Afterwards open the gnome-terminal -> preferences -> Unnamed -> Custom Font: RobotoMono Nerd Font
+
+## tree-sitter-cli for nvim-treesitter
+```sh
+npm install -g tree-sitter-cli
+```
 
 
 # Installation
