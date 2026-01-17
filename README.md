@@ -33,3 +33,8 @@ sudo dnf install nvim
 ```sh
 git clone git@github.com:MajortomVR/neovim-config.git ~/.config/nvim
 ```
+
+# Adding LSPs
+
+1) Add a language server in mason.lua by adding them to the ensure_installed list.
+2) To check the lsp `:checkhealth vim.lsp`

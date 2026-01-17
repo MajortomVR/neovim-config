@@ -1,0 +1,3 @@
+-- LSPs do no longer need to be enabled manually thanks to mason-lspconfig
+-- vim.lsp.enable("lua_ls")
+-- vim.lsp.enable("vtsls")
