@@ -91,7 +91,7 @@ return {
                     'xml',
                     'yaml',
                 }, {
-                        max_jobs = 8,
+                        max_jobs = 1,
                     })
             end,
         })
