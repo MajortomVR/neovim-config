@@ -12,8 +12,19 @@ return {
     lazy = false,
     branch = 'main',
     build = ':TSUpdate',
-    config = function(_, opts)
+    config = function()
         local ts = require('nvim-treesitter')
+
+        -- Fix to prevent parser directory not being in runtimepath
+        local install = require('nvim-treesitter.install')
+        local parser_install_dir = vim.fn.stdpath("data") .. "/site"
+
+        if vim.fn.isdirectory(parser_install_dir) == 0 then
+            vim.fn.mkdir(parser_install_dir, "p")
+        end
+
+        install.parser_install_dir = parser_install_dir
+        vim.opt.runtimepath:prepend(parser_install_dir)
 
         -- State tracking for async parser loading
         local parsers_loaded = {}
