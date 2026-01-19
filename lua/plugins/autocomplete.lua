@@ -13,7 +13,12 @@ return {
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
     opts = {
-        keymap = { preset = 'default' },
+        keymap = {
+            preset = 'default',
+
+            -- Rebinded ctrl+y to ctrl+z for confirming auto completion.
+            ['<C-z>'] = { 'accept', 'fallback' },
+        },
 
         appearance = {
             -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
@@ -35,7 +40,7 @@ return {
         -- when the Rust fuzzy matcher is not available, by using `implementation = "prefer_rust"`
         --
         -- See the fuzzy documentation for more information
-        fuzzy = { implementation = "prefer_rust_with_warning" }
+        fuzzy = { implementation = "prefer_rust_with_warning" },
     },
     opts_extend = { "sources.default" }
 }
