@@ -73,13 +73,13 @@ return {
                     'jq',    -- for the terminal command jq to develop complex queries etc
                     'jsdoc',
                     'json',
+                    'kulala_http',
                     'lua',
                     'luadoc',
                     'make',
                     'markdown',
                     'markdown_inline',
                     'nginx',
-                    'norg', -- Note taking similar to markdown but for local use.
                     'passwd', -- Parser for the /etc/passwd password database
                     'pem', -- Parser for PEM files
                     'pug',
