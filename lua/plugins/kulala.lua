@@ -20,6 +20,18 @@ return {
                 end,
             })
 
+            -- Disable folding in the request output
+            vim.api.nvim_create_autocmd("FileType", {
+                pattern = "json.kulala_ui",
+                callback = function()
+                    vim.schedule(function()
+                        vim.opt_local.foldenable = false
+                        vim.opt_local.foldlevel = 99
+                        vim.cmd("normal! zR")
+                    end)
+                end,
+            })
+
             -- Link the file extension
             vim.filetype.add({
                 extension = { ["http"] = "http" },
