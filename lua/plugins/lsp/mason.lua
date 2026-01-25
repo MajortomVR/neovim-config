@@ -1,3 +1,26 @@
+-- Config to make vtsls attach to vue files and make it aware of the vue_ls plugin which handles these files.
+local vue_language_server_path = vim.fn.stdpath('data') .. "/mason/packages/vue-language-server/node_modules/@vue/language-server"
+local vue_plugin = {
+    name = '@vue/typescript-plugin',
+    location = vue_language_server_path,
+    languages = { 'vue' },
+    configNamespace = 'typescript',
+}
+vim.lsp.config('vtsls', {
+    settings = {
+        vtsls = {
+            tsserver = {
+                globalPlugins = {
+                    vue_plugin,
+                },
+            },
+        },
+    },
+    filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+})
+
+
+--     -----------------------------------------------------------------------
 return {
     "mason-org/mason-lspconfig.nvim",
     opts = {
@@ -5,6 +28,7 @@ return {
         ensure_installed = {
             "lua_ls",
             "vtsls",  -- typescript, javascript -> from vscode
+            "vue_ls",    -- vue support   -- https://github.com/vuejs/language-tools/wiki/Neovim
             "html",
             "graphql",
         },
@@ -35,12 +59,14 @@ return {
             servers = {
                 lua_ls = {},
                 vtsls = {},
+                vue_ls = {},
                 html = {},
                 graphql = {},
             }
         },
         config = function(_, opts)
             local lspconfig = require('lspconfig')
+
             for server, config in pairs(opts.servers) do
                 -- passing config.capabilities to blink.cmp merges with the capabilities in your
                 -- `opts[server].capabilities, if you've defined it
