@@ -26,6 +26,8 @@ return {
     opts = {
         -- Language server that get automatically installed
         ensure_installed = {
+            "neocmake",
+            "clangd",   -- C++
             "lua_ls",
             "vtsls",  -- typescript, javascript -> from vscode
             "vue_ls",    -- vue support   -- https://github.com/vuejs/language-tools/wiki/Neovim
@@ -57,6 +59,8 @@ return {
         },
         opts = {
             servers = {
+                clangd = {},
+                neocmake = {},
                 lua_ls = {},
                 vtsls = {},
                 vue_ls = {},
