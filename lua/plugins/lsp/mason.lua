@@ -18,7 +18,28 @@ vim.lsp.config('vtsls', {
     },
     filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
 })
-
+-- Clangd configuration for C++/Qt
+vim.lsp.config('clangd', {
+    cmd = {
+        "clangd",
+        "--background-index",
+        "--clang-tidy",
+        "--query-driver=/usr/bin/g++",
+    },
+    -- This is the proper way to pass compiler flags to clangd 
+    -- when you aren't using a compile_commands.json file.
+    init_options = {
+        fallbackFlags = {
+            "-I/usr/include/qt6",
+            "-I/usr/include/qt6/QtWidgets",
+            "-I/usr/include/qt6/QtCore",
+            "-I/usr/include/qt6/QtGui",
+            "-DQT_WIDGETS_LIB",
+            "-std=c++17",
+        },
+    },
+    root_dir = vim.fs.dirname(vim.fs.find({ 'CMakeLists.txt', '.git' }, { upward = true })[1]),
+})
 
 --     -----------------------------------------------------------------------
 return {
