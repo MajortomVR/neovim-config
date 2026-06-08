@@ -1,3 +1,8 @@
+# Description:
+
+This neovim configuration works for neovim version 0.11.7 and does not support 0.12 at the moment.
+It is likely to change a lot in the future, now that neovim has a lot more functionallity built into it as well as a plugin manager.
+
 # Dependencies
 
 ## Nerdfont
