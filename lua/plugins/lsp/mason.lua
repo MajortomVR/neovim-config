@@ -35,7 +35,7 @@ vim.lsp.config('clangd', {
             "-I/usr/include/qt6/QtCore",
             "-I/usr/include/qt6/QtGui",
             "-DQT_WIDGETS_LIB",
-            "-std=c++17",
+            "-std=c++23",
         },
     },
     root_dir = vim.fs.dirname(vim.fs.find({ 'CMakeLists.txt', '.git' }, { upward = true })[1]),
