@@ -49,6 +49,8 @@ fc-cache -fv
     - `clangd`
 - javascript
     - `vtsls`
+- json
+    - `jsonls`
 - html
     - `html`
 - SQL
