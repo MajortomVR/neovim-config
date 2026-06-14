@@ -16,7 +16,7 @@ vim.opt.expandtab = true -- use appropriate number of spaces with tab
 vim.opt.smartindent = true -- indenting correctly after {
 vim.opt.autoindent = true -- copy indent from current line
 
--- Copy/Paste to clipboard
+-- Copy/Paste to clipboard - Needs xclip installed! (sudo apt install xclip)
 vim.opt.clipboard = "unnamedplus"
 
 -- Visual Settings
@@ -27,3 +27,10 @@ vim.opt.signcolumn = "yes" -- always show sign column
 vim.opt.ignorecase = true -- Case insensitive search
 vim.opt.smartcase = true -- Case sensitive if uppercase in search
 vim.opt.incsearch = true -- Show matches as you type
+
+-- Autocomplete
+vim.opt.autocomplete = true
+-- vim.opt.complete = ".,w,b,o"
+-- vim.opt.completeopt = "menuone,noselect,fuzzy"
+vim.opt.pumheight = 10
+-- vim.opt.pumborder = "rounded"

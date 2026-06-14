@@ -1,28 +1,7 @@
 # Description:
 
-This neovim configuration works for neovim version 0.11.7 and does not support 0.12 at the moment.
-It is likely to change a lot in the future, now that neovim has a lot more functionallity built into it as well as a plugin manager.
-
-# Dependencies
-
-## Nerdfont
-
-Download a nerd font from https://www.nerdfonts.com for example.
-(RobotoMono Nerd Font), download the zip package.
-
-unzip into ~/.local/share/fonts/RobotoMono/
-
-in the terminal execute afterwards:
-```sh
-fc-cache -fv
-```
-
-Afterwards open the gnome-terminal -> preferences -> Unnamed -> Custom Font: RobotoMono Nerd Font
-
-## tree-sitter-cli for nvim-treesitter
-```sh
-npm install -g tree-sitter-cli
-```
+Neovim config for versions >= 0.12
+Uses vim.pack as package manager instead of lazy.
 
 
 # Installation
@@ -39,7 +18,74 @@ sudo dnf install nvim
 git clone git@github.com:MajortomVR/neovim-config.git ~/.config/nvim
 ```
 
-# Adding LSPs
 
-1) Add a language server in mason.lua by adding them to the ensure_installed list.
-2) To check the lsp `:checkhealth vim.lsp`
+# Dependencies:
+
+## Nerdfont
+
+Download a nerd font from https://www.nerdfonts.com for example.
+(RobotoMono Nerd Font), download the zip package.
+
+unzip into `~/.local/share/fonts/RobotoMono/`
+
+in the terminal execute afterwards:
+```bash
+fc-cache -fv
+```
+
+
+## For Plugins:
+- ripgrep 
+    - Used for fzf-lua
+    - install using `sudo apt install ripgrep`
+- xclip
+    - for copy pasting using the clipboard (`unnamedplus`)
+
+
+## LSP:
+- lua
+    - `lua-language-server`
+- c++
+    - `clangd`
+- javascript
+    - `vtsls`
+
+
+
+# Install LSP:
+## lua - lua-language-server:
+
+Ubuntu:
+```bash
+sudo apt install lua-language-server
+```
+
+Fedora:
+```bash
+mkdir -p ~/.local/share/lua-language-server
+# Download release for linux 64
+curl -L -o /tmp/lua_ls.tar.gz https://github.com/LuaLS/lua-language-server/releases/download/3.18.2/lua-language-server-3.18.2-linux-x64.tar.gz
+
+tar -xzf /tmp/lua_ls.tar.gz -C ~/.local/share/lua-language-server
+
+# Create a symlink to it in your local bin path so Neovim can instantly find it
+mkdir -p ~/.local/bin
+ln -sf ~/.local/share/lua-language-server/bin/lua-language-server ~/.local/bin/lua-language-server
+```
+
+## C++ (clangd)
+
+Ubuntu:
+```bash
+sudo apt install clangd
+```
+
+Fedora:
+```bash
+sudo dnf install clang-tools-extra
+```
+
+## javascript (vtsls)
+```bash
+sudo npm install -g @vtsls/language-server
+```
