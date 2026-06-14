@@ -49,6 +49,10 @@ fc-cache -fv
     - `clangd`
 - javascript
     - `vtsls`
+- html
+    - `html`
+- SQL
+    - `sqls`
 
 
 
@@ -88,4 +92,15 @@ sudo dnf install clang-tools-extra
 ## javascript (vtsls)
 ```bash
 sudo npm install -g @vtsls/language-server
+```
+
+## html (html)
+```bash
+npm install -g vscode-langservers-extracted
+```
+
+## SQL (sqls)
+```bash
+go install github.com/sqls-server/sqls@latest
+sudo ln -s $HOME/go/bin/sqls /usr/local/bin/sqls
 ```

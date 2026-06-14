@@ -30,7 +30,11 @@ vim.opt.incsearch = true -- Show matches as you type
 
 -- Autocomplete
 vim.opt.autocomplete = true
--- vim.opt.complete = ".,w,b,o"
--- vim.opt.completeopt = "menuone,noselect,fuzzy"
+vim.opt.complete = ".,w,b,o"
+vim.opt.completeopt = { "menuone", "noselect", "fuzzy" } -- "menuone,noselect,fuzzy"
 vim.opt.pumheight = 10
 -- vim.opt.pumborder = "rounded"
+
+-- Disable the legacy Vim SQL completion plugin as we use the sqls SQL lsp instead
+vim.g.omni_sql_default_compl_type = 'syntax'
+-- vim.g.omni_sql_no_default = 1

@@ -26,13 +26,17 @@ require("config.autocomplete")
 
 -- Plugins
 vim.pack.add({
-    'https://github.com/neovim/nvim-lspconfig',
 	'https://github.com/ibhagwan/fzf-lua',
     'https://github.com/mistweaverco/kulala.nvim',
     'https://github.com/folke/which-key.nvim',
     'https://github.com/MeanderingProgrammer/render-markdown.nvim',
     'https://github.com/tpope/vim-fugitive',
     'https://github.com/lewis6991/gitsigns.nvim',
+})
+
+-- LSPs
+vim.pack.add({
+    'https://github.com/nanotee/sqls.nvim',
 })
 
 require("plugins.fzf")
