@@ -15,6 +15,7 @@ vim.lsp.config('clangd', require('plugins.lsp.clangd'))
 vim.lsp.config('html', require('plugins.lsp.html'))
 vim.lsp.config('jsonls', require('plugins.lsp.jsonls'))
 vim.lsp.config('lua_ls', require('plugins.lsp.lua_ls'))
+vim.lsp.config('pyright', require('plugins.lsp.pyright'))
 vim.lsp.config('sqls', require('plugins.lsp.sqls'))
 vim.lsp.config('vtsls', require('plugins.lsp.vtsls'))
 
@@ -23,6 +24,7 @@ vim.lsp.enable({
     'html',
     'jsonls',
     'lua_ls',
+    'pyright',
     'sqls',
     'vtsls',
 })

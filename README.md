@@ -55,6 +55,8 @@ fc-cache -fv
     - `html`
 - SQL
     - `sqls`
+- python3
+    - `pyright`
 
 
 
@@ -105,4 +107,9 @@ npm install -g vscode-langservers-extracted
 ```bash
 go install github.com/sqls-server/sqls@latest
 sudo ln -s $HOME/go/bin/sqls /usr/local/bin/sqls
+```
+
+## python3 (pyright)
+```bash
+npm install -g pyright
 ```
